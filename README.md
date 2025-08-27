@@ -53,3 +53,398 @@ I’m **Mubashar Ali**, a passionate **digital entrepreneur and strategist** ded
 
 👨‍💻 **Author:** Mubashar Ali  
  🚀 Digital Creator | 🧠 SEO & Automation Strategist
+
+## Here is Demo:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mubashar Digi</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Onest', sans-serif;
+}
+
+:root {
+  --color-white: #fff;
+  --color-1: #350048;
+  --color-2: rgba(255, 255, 255, 0.05);
+  --color-3: rgba(0, 0, 0, 0.2);
+  --color-4: rgba(255, 255, 255, 0.1);
+  --color-gradient-1: rgba(255,255,255, 0.15);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--color-1);
+  color: #fff;
+  padding: 20px;
+}
+
+/* ===== Neon Border Around Image ===== */
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+@keyframes spin { to { --bg-angle: 360deg; } }
+
+.neon-border {
+  animation: spin 2s linear infinite;
+  background: linear-gradient(to bottom, #111, #111) padding-box,
+              conic-gradient(from var(--bg-angle),
+                #ff0047, #ff7b00, #ffee00, #00ff2a,
+                #00fff7, #002bff, #a200ff, #ff0047) border-box;
+  border: 6px solid transparent;
+  border-radius: 1rem;
+  padding: 8px;
+  display: inline-block;
+  box-shadow: 0 0 25px rgba(255,0,150,0.8),
+              0 0 50px rgba(0,255,250,0.8),
+              0 0 75px rgba(0,100,255,0.8);
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.neon-border img {
+  display: block;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+/* ===== Expandable Card Effect ===== */
+.card-container {
+  width: 600px;
+  position: relative;
+  display: none; /* hidden until hover */
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.card {
+  position: relative;
+}
+.card .face {
+  width: 500px;
+  min-height: 200px;
+  transition:.4s;
+}
+.card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+.card:hover .face.face1 {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px whitesmoke,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+}
+.card .face.face1 .content {
+  opacity: .2;
+  transition: 0.5s;
+  text-align: center;
+}
+.card:hover .face.face1 .content { opacity: 1; }
+.card .face.face1 .content h3 {
+  font-size: 1.4em;
+  color: white;
+}
+.card .face.face2 {
+  position: relative;
+  background: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+  transform: translateY(-100px);
+}
+.card:hover .face.face2 { transform: translateY(0); }
+.card .face.face2 .content p {
+  font-size: 11pt;
+  color: #333;
+}
+
+/* ===== Social Button Styling (Glass Glow + Sparks) ===== */
+.container {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container .btn {
+  position: relative;
+  width: 155px;
+  height: 50px;
+  margin: 20px;
+  overflow: hidden;
+}
+.container .btn a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-2);
+  box-shadow: 0 15px 35px var(--color-3);
+  border-top: 1px solid var(--color-4);
+  border-bottom: 1px solid var(--color-4);
+  border-radius: 30px;
+  color: var(--color-white);
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.8s;
+  backdrop-filter: blur(15px);
+}
+.container .btn:hover a { letter-spacing: 3px; }
+.container .btn a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, var(--color-gradient-1), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.8s;
+}
+.container .btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+.container .btn::before,
+.container .btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.8s;
+}
+.container .btn::before { bottom: -5px; }
+.container .btn:hover::before {
+  bottom: 0; height: 50%; width: 80%; border-radius: 30px; transition-delay: 0.5s;
+}
+.container .btn::after { top: -5px; }
+.container .btn:hover::after {
+  top: 0; height: 50%; width: 80%; border-radius: 30px; transition-delay: 0.5s;
+}
+/* Glow colors */
+.container .btn:nth-child(1)::before,
+.container .btn:nth-child(1)::after { background: #ff1f71; box-shadow: 0 0 15px #ff1f71; }
+.container .btn:nth-child(2)::before,
+.container .btn:nth-child(2)::after { background: #2bd2ff; box-shadow: 0 0 15px #2bd2ff; }
+.container .btn:nth-child(3)::before,
+.container .btn:nth-child(3)::after { background: #1eff45; box-shadow: 0 0 15px #1eff45; }
+.container .btn:nth-child(4)::before,
+.container .btn:nth-child(4)::after { background: #ffae00; box-shadow: 0 0 15px #ffae00; }
+.container .btn:nth-child(5)::before,
+.container .btn:nth-child(5)::after { background: #ff008c; box-shadow: 0 0 15px #ff008c; }
+.container .btn:nth-child(6)::before,
+.container .btn:nth-child(6)::after { background: #00ffea; box-shadow: 0 0 15px #00ffea; }
+.container .btn:nth-child(7)::before,
+.container .btn:nth-child(7)::after { background: #9d00ff; box-shadow: 0 0 15px #9d00ff; }
+.container .btn:nth-child(8)::before,
+.container .btn:nth-child(8)::after { background: #ff5500; box-shadow: 0 0 15px #ff5500; }
+.container .btn:nth-child(9)::before,
+.container .btn:nth-child(9)::after { background: #00a2ff; box-shadow: 0 0 15px #00a2ff; }
+.container .btn:nth-child(10)::before,
+.container .btn:nth-child(10)::after { background: #c300ff; box-shadow: 0 0 15px #c300ff; }
+.container .btn:nth-child(11)::before,
+.container .btn:nth-child(11)::after { background: #00ff9d; box-shadow: 0 0 15px #00ff9d; }
+.container .btn:nth-child(12)::before,
+.container .btn:nth-child(12)::after { background: #ff006a; box-shadow: 0 0 15px #ff006a; }
+.container .btn:nth-child(13)::before,
+.container .btn:nth-child(13)::after { background: #9dff00; box-shadow: 0 0 15px #9dff00; }
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin: 30px 0 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  width: 100%;
+}
+
+.section-header::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  margin: 10px auto;
+}
+
+/* ===== Gravity Sparks ===== */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fly 1s ease-out forwards;
+}
+@keyframes fly {
+  to { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+  .container, .card-container {
+    width: 100%;
+  }
+  
+  .card .face {
+    width: 100%;
+  }
+  
+  .container .btn {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .neon-border {
+    margin-bottom: 30px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- IMAGE WITH NEON -->
+<div class="neon-border" id="imageBox">
+  <img src="https://i.ibb.co/YCcYBys/mubashardigi-apna-mubashar-venomous.jpg" alt="Mubashar Digi">
+</div>
+
+<!-- ABOUT CARD -->
+<div class="card-container" id="aboutCard">
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <h3>About Myself</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p>Hi, I'm Mubashar Ali — a family law attorney by profession and a digital creator by passion. My work is a mix of traditional law practice and forward-thinking digital projects. On one side, I help families navigate sensitive legal matters with clarity and empathy. On the other, I dive deep into AI, automation, SEO, and social media systems to build and test projects that push boundaries.</p>
+        <p>Over the years, I've explored projects like:<br><br>
+        <b>YouTube & Snapchat Automation Systems</b> – creating faceless channels, Shorts strategies, and monetization methods.<br><br>
+        <b>AI & Automation Tools</b> – building custom n8n workflows, WhatsApp channel auto-posting systems, and GUI tools with memory + AI integrations.<br><br>
+        <b>SEO & Growth Strategies</b> – experimenting with AEO, GEO, VEO, and AI-driven optimization techniques.<br><br>
+        <b>Creative Video Systems</b> – from identity-bypass editing kits to AI voice cloning, designed for content creators who want to scale fast.</p>
+        <p>Outside of law and tech, I enjoy blending traditional discipline with modern innovation — whether it's handling a legal case or testing an AI system, I believe in approaching challenges with precision and creativity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIAL BUTTONS -->
+<div class="section-header">📱 Social Media & Content</div>
+<div class="container">
+  <div class="btn"><a href="https://www.instagram.com/mubashardigi" target="_blank">Instagram</a></div>
+  <div class="btn"><a href="https://www.facebook.com/mubashardigi" target="_blank">Facebook</a></div>
+  <div class="btn"><a href="https://x.com/mubashardigi" target="_blank">Twitter (X)</a></div>
+  <div class="btn"><a href="https://www.threads.com/@mubashardigi" target="_blank">Threads</a></div>
+  <div class="btn"><a href="https://pk.linkedin.com/in/mubasharali-growthbeast" target="_blank">LinkedIn</a></div>
+  <div class="btn"><a href="https://youtube.com/@VAlChemistAi" target="_blank">YouTube</a></div>
+  <div class="btn"><a href="https://tiktok.com/@mubashardigi" target="_blank">TikTok</a></div>
+  <div class="btn"><a href="https://www.snapchat.com/add/mubashar.digi" target="_blank">Snapchat</a></div>
+</div>
+
+<div class="section-header">💬 Messaging & Communities</div>
+<div class="container">
+  <div class="btn"><a href="https://whatsapp.com/channel/0029VaMHvIa7NoZrRFw9l419" target="_blank">WhatsApp BL</a></div>
+  <div class="btn"><a href="https://whatsapp.com/channel/0029VaN2vVwICVfd63M4Gn1L" target="_blank">  Venomous</a></div>
+  <div class="btn"><a href="http://T.me/Its_Venomous" target="_blank">Telegram ID</a></div>
+  <div class="btn"><a href="https://t.me/Blogginglegends" target="_blank">Telegram BL</a></div>
+</div>
+
+<div class="section-header">🌐 Website & All Links</div>
+<div class="container">
+  <div class="btn"><a href="https://mubasharali.bio" target="_blank">Website</a></div>
+  <div class="btn"><a href="https://heylink.me/apna_mubashar/" target="_blank">All-in-One Link</a></div>
+</div>
+
+<script>
+/* Gravity sparks effect */
+document.querySelectorAll(".btn").forEach(btn => {
+  let interval;
+  btn.addEventListener("mouseenter", () => {
+    interval = setInterval(() => spawnParticles(btn), 120);
+  });
+  btn.addEventListener("mouseleave", () => clearInterval(interval));
+});
+
+function spawnParticles(btn) {
+  const rect = btn.getBoundingClientRect();
+  for (let i = 0; i < 4; i++) {
+    const particle = document.createElement("span");
+    particle.classList.add("particle");
+    const xStart = Math.random() * rect.width;
+    const yStart = Math.random() * rect.height;
+    particle.style.left = xStart + "px";
+    particle.style.top = yStart + "px";
+    const angle = Math.random() * 2 * Math.PI;
+    const radius = Math.random() * 80 + 30;
+    particle.style.setProperty("--x", `${Math.cos(angle) * radius}px`);
+    particle.style.setProperty("--y", `${Math.sin(angle) * radius}px`);
+    btn.appendChild(particle);
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+
+/* Neon -> About Card Toggle */
+const imageBox = document.getElementById("imageBox");
+const aboutCard = document.getElementById("aboutCard");
+imageBox.addEventListener("mouseenter", () => {
+  imageBox.style.animation = "none";
+  imageBox.style.display = "none";
+  aboutCard.style.display = "flex";
+});
+aboutCard.addEventListener("mouseleave", () => {
+  aboutCard.style.display = "none";
+  imageBox.style.display = "inline-block";
+  imageBox.style.animation = "spin 2s linear infinite";
+});
+</script>
+
+</body>
+</html>
