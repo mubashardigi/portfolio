@@ -37,15 +37,17 @@ I blend law, technology, and creativity through projects like:
 ```bash
 # Clone the repository
 git clone https://github.com/mubashardigi/mubasharali-portfolio.git
+```
 
 # Open the portfolio in your browser
 cd mubasharali-portfolio
 open index.html   # or double click index.html
-🏆 SEO Keywords
-Mubashar Ali portfolio, mubashardigi, family law attorney,
+
+## 🏆 SEO Keywords
+Mubashar Ali portfolio, mubashardigi,
 social links page, SEO portfolio, digital creator, GitHub portfolio template.
 
-👨‍💻 By Mubashar Ali
+## 👨‍💻 By Mubashar Ali
 📍 Digital Creator | SEO & Automation Enthusiast
 
 php-template
@@ -58,13 +60,8 @@ Paste this inside `<head>` of your HTML file ⬇️
 
 ```bash
 <title>Mubashar Ali - Portfolio & Social Links</title>
-<meta name="description" content="Mubashar Ali | Family Law Attorney & Digital Creator. Explore my portfolio, social media, and projects.">
-<meta name="keywords" content="Mubashar Ali, Mubashardigi, family law attorney, portfolio, social links, SEO, automation, digital creator">
+<meta name="description" content="Mubashar Ali | Digital Creator. Explore my portfolio, social media, and projects.">
+<meta name="keywords" content="Mubashar Ali, Mubashardigi, portfolio, social links, SEO, automation, digital creator">
 <meta name="author" content="Mubashar Ali">
+```
 
-<!-- Open Graph -->
-<meta property="og:title" content="Mubashar Ali - Portfolio">
-<meta property="og:description" content="Explore Mubashar Ali's portfolio, social profiles, and projects.">
-<meta property="og:image" content="assets/mubashar.jpg">
-<meta property="og:url" content="https://mubashardigi.github.io/mubasharali-portfolio/">
-<meta name="twitter:card" content="summary_large_image">
