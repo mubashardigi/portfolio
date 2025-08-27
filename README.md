@@ -34,8 +34,9 @@ I blend law, technology, and creativity through projects like:
 
 
 ## 🚀 How to Use
-```bash
+
 # Clone the repository
+```bash
 git clone https://github.com/mubashardigi/mubasharali-portfolio.git
 ```
 
